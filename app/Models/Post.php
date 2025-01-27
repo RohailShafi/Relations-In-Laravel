@@ -29,6 +29,12 @@ class Post extends Model
 
     }
 
+    public function country(){
+
+        return $this->belongsTo(Country::class);
+
+    }
+
 //    queries
 
     public static function create(Request $request){

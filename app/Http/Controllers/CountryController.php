@@ -16,7 +16,7 @@ class CountryController extends Controller
 
             $result = Country::getUsersWithPostsAndCountry($request);
 
-            return Response::json($result , 201);
+            return Response::json($result , 200);
 
         }catch (\Exception $exception){
 

@@ -188,7 +188,20 @@ return [
             'table' => 'countries',
             'fillable' => ['name'],
             'hidden' => ['created_at' , 'updated_at'],
+        ],
+
+        'Role' => [
+            'table' => 'roles',
+            'fillable' => ['name'],
+            'hidden' => ['created_at' , 'updated_at'],
+        ],
+
+        'UserRole' => [
+            'table' => 'user_roles',
+            'fillable' => ['user_id' , 'role_id'],
+            'hidden' => ['created_at' , 'updated_at'],
         ]
+
     ]
 
 ];

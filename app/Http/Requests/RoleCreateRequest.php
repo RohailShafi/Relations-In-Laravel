@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SingleCountryRequest extends FormRequest
+class RoleCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,9 @@ class SingleCountryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+
+            'name' => 'required|in:user,admin,customer,sub admin,manager,supervisor|string|max:150',
+
         ];
     }
 }

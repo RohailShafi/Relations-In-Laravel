@@ -20,7 +20,7 @@ class UserController extends Controller
 
             $user = User::create($request);
 
-            return Response::json($user , 201);
+            return Response::json($user , 200);
 
         }catch (\Exception $exception){
 
