@@ -24,7 +24,6 @@ class User extends Authenticatable
     }
 
 //    relation
-//
     public function posts(){
 
         return $this->hasMany(Post::class );
@@ -39,7 +38,7 @@ class User extends Authenticatable
 
 //    queries
 
-    public static function create(Request $request){
+    public static function create($request){
 
         $data = $request->only((new self)->getFillable());
 
@@ -49,8 +48,21 @@ class User extends Authenticatable
 
     public static function getPost(Request $request){
 
+        $user = self::find($request->input('id'));
 
-        return User::with('posts' ,'country')->find($request->input('id'));
+//        $user->makehidden('name');
+        $user->makevisible('created_at');
+
+//        dd($user);
+
+//        return $user->toJson();
+//
+        return $user->toArray();
+
+
+//        return $user->attributesToArray();
+
+//        return User::with('posts' ,'country')->find($request->input('id'));
 
     }
     /**
